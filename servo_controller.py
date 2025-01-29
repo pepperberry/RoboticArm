@@ -42,8 +42,9 @@ class ServoController(Node):
         self.subscription
 #defines the listner callback method which process incoming messahes converting an angle into a pulse wicth ect...
     def listener_callback(self, msg):
+        print("got message")
         for i, angle in enumerate(msg.data):
-                if i < len(self.servo_channels):
+                if i < len(self.servo_channel):
                         pulse_width = self.min_pulse + (self.max_pulse - self.min_pulse) * (angle /180.0)
                         pulse_length = int(pulse_width / 1000000 * self.frequency * 4096)
                         self.pwm.channels[self.servo_channels[i]].duty_cycle = pulse_length
