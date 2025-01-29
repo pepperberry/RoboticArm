@@ -1,12 +1,12 @@
 import rclpy
 from rclpy.node import Node
 
-from std_msgs.msg import Float64MultiArray
+from std_msgs.msg import Float64
 
 class InputControl(Node):
   def __init__(self):
     super().__init__('input_controller')
-    self.angle = [90.0] * 5
+    self.angles = [90.0] * 5
     self.publisher_=self.create_publisher(Float64MultiArray, 'servo_commands', 10)
     self.run();
   def run(self):
@@ -19,7 +19,7 @@ class InputControl(Node):
         elif command == 's':
           self.angle[0] -=1.0
         msg = Float64MultiArray()
-        msg.data = self.angle
+        msg.data = self.angles
         self.publisher_.publish(msg)
         print("published")
     except KeyboardInterrupt:
