@@ -12,6 +12,7 @@ class InputControl(Node):
   def run(self):
     try:
       while rclpy.ok():
+        command = input("enter command: ")
         print("captuerd command")
         if command == 'a':
           self.angle[0] += 1.0
