@@ -1,4 +1,9 @@
-#this is our subsrciber file
+"""
+author: Pepper Berry
+date: jan 29th 2025
+use: this is our subsrciber file for the simplest motor movement possible in ros2
+use in conjunction with the input_easy.py our publisher file
+"""
 
 #ros 2 python client library
 import rclpy 
