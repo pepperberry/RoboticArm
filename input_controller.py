@@ -22,7 +22,7 @@ class InputControl(Node):
         msg.data = self.angles
         self.publisher_.publish(msg)
         print("published")
-    except KeyboardInterruipt:
+    except KeyboardInterrupt:
       pass
 
 def main(args=None):
