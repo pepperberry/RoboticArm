@@ -11,7 +11,7 @@ class InputEasy(Node):
     
   def run(self):
     msg = Float64()
-    msg.data = 40
+    msg.data = 40.0
     self.publisher_.publish(msg)
     print("published")
 
