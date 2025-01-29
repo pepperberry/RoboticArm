@@ -2,7 +2,7 @@
 import rclpy 
 from rclpy.node import Node 
 
-#publish and subscribe to messages w/ floatng point numbers
+#publish and subscribe to messages w/ floatng point numbers (degrees of rotation)
 from std_msgs.msg import Float64
 
 #imports the pca9865 board libraries to interact with it
@@ -15,8 +15,11 @@ import busio
 class ServoEasy(Node):
     def __init__(self):
         super().__init__('servo_easy')
+        #initalizing the board and its fequency
         self.pca = adafruit_pca9685.PCA9685(board.I2C())
         self.pca.frequency = 50
+
+        #creating a subscription to the outputted message to the topic 'servo_command' this is the common factor between the two files
         self.subscription = self.create_subscription(Float64, 'servo_command', self.listener_callback, 10)
         self.subscription
         
@@ -27,6 +30,7 @@ class ServoEasy(Node):
     def listener_callback(self, msg):
         print("got message")
         self.set_servo_angle(0, msg.data)
+        
 #setting the exact movemnt
     def set_servo_angle(self, channel, angle):
         pulse_length = int((angle / 180.0) * 4096)
