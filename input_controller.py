@@ -6,8 +6,8 @@ from std_msgs.msg import Float64
 class InputControl(Node):
   def __init__(self):
     super().__init__('input_controller')
-    self.angles = [90.0] * 5
-    self.publisher_=self.create_publisher(Float64MultiArray, 'servo_commands', 10)
+    self.angle = 90.0
+    self.publisher_=self.create_publisher(Float64, 'servo_command', 10)
     self.run();
   def run(self):
     try:
@@ -15,12 +15,12 @@ class InputControl(Node):
         command = input("enter command: ")
         print("captuerd command")
         if command == 'a':
-          self.angle[0] += 1.0
+          self.angle += 1.0
         elif command == 's':
-          self.angle[0] -=1.0
+          self.angle -=1.0
         msg = Float64MultiArray()
-        msg.data = self.angles
-        self.publisher_.publish(msg)
+        msg.data = self.angle
+        self.publisher.publish(msg)
         print("published")
     except KeyboardInterrupt:
       pass
