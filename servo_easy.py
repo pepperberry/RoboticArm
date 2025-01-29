@@ -6,6 +6,7 @@ from rclpy.node import Node
 from std_msgs.msg import Float64
 
 #imports the pca9865 board libraries to interact with it
+import adafruit_pca9685
 from adafruit_pca9685 import PCA9685
 import board
 import busio
@@ -16,7 +17,7 @@ class ServoEasy(Node):
         super().__init__('servo_easy')
         self.pca = adafruit_pca9685.PCA9685(board.I2C())
         self.pca.frequency = 50
-        self.subscription = self.create_subscription(Float64, 'servo_command', self.listner_callback, 10)
+        self.subscription = self.create_subscription(Float64, 'servo_command', self.listener_callback, 10)
         self.subscription
         
         
