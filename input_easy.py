@@ -3,9 +3,9 @@ from rclpy.node import Node
 
 from std_msgs.msg import Float64
 
-class InputControl(Node):
+class InputEasy(Node):
   def __init__(self):
-    super().__init__('input_controller')
+    super().__init__('input_easy')
     self.publisher_=self.create_publisher(Float64, 'servo_command', 10)
     self.run();
     
@@ -17,7 +17,7 @@ class InputControl(Node):
 
 def main(args=None):
   rclpy.init(args=args)
-  input_control = InputControl()
+  input_control = InputEasy()
   rclpy.shutdown()
 
 if __name__ == '__main__':
