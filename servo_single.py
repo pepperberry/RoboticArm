@@ -26,8 +26,12 @@ class ServoSingle(Node):
         
 #defines the listner callback method which process incoming messages
     def listener_callback(self, msg):
+        
+        #lets us know what the single servo is
+        int channel = 0;
+        
         print("got message")
-        self.set_servo_angle(0, msg.data)
+        self.set_servo_angle(channel, msg.data)
         
 #setting the exact movemnt
     def set_servo_angle(self, channel, angle):
