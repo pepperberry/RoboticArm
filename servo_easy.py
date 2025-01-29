@@ -14,11 +14,11 @@ import busio
 class ServoEasy(Node):
     def __init__(self):
         super().__init__('servo_easy')
-        self.set_servo_angle(0, 90.0)
-        self.subscription = self.create_subscription(Float64, 'servo_command', self.listner_callback, 10)
-        self.subscription
         self.pca = adafruit_pca9685.PCA9685(board.I2C())
         self.pca.frequency = 50
+        self.subscription = self.create_subscription(Float64, 'servo_command', self.listner_callback, 10)
+        self.subscription
+        
         
 
 
