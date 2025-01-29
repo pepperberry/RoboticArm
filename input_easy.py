@@ -10,7 +10,7 @@ class InputEasy(Node):
     self.run();
     
   def run(self):
-    msg = Float64MultiArray()
+    msg = Float64()
     msg.data = 40
     self.publisher.publish(msg)
     print("published")
