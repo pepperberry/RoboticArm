@@ -12,20 +12,18 @@ import board
 import busio
 
 #initalizing 
-class ServoEasy(Node):
+class ServoSingle(Node):
     def __init__(self):
-        super().__init__('servo_easy')
+        super().__init__('servo_single')
         #initalizing the board and its fequency
         self.pca = adafruit_pca9685.PCA9685(board.I2C())
         self.pca.frequency = 50
 
         #creating a subscription to the outputted message to the topic 'servo_command' this is the common factor between the two files
         self.subscription = self.create_subscription(Float64, 'servo_command', self.listener_callback, 10)
-        self.subscription
+        #self.subscription
         
         
-
-
 #defines the listner callback method which process incoming messages
     def listener_callback(self, msg):
         print("got message")
@@ -39,8 +37,8 @@ class ServoEasy(Node):
 # defines the main
 def main(args=None):
     rclpy.init(args=args) #initalizes library
-    node = ServoEasy() #creates an instance
-    rclpy.spin(node) #keep running and process callbacks
+    node = ServoSingle() #creates an instance
+    rclpy.spin(node) #keep running and process when it gets a message
     node.destroy_node() #destroys when done
     rclpy.shutdown()
 
