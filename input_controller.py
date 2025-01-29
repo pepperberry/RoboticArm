@@ -19,7 +19,7 @@ class InputControl(Node):
         elif command == 's':
           self.angle[0] -=1.0
         msg = Float64MultiArray()
-        msg.data = self.angles
+        msg.data = self.angle
         self.publisher_.publish(msg)
         print("published")
     except KeyboardInterrupt:
