@@ -35,7 +35,7 @@ class ServoSingle(Node):
     def listener_callback(self, msg):
         
         #lets us know what the single servo is
-        int channel = 0;
+        channel = 0
         
         print("got message")
         self.set_servo_angle(channel, msg.data)
