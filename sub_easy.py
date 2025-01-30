@@ -2,7 +2,7 @@
 author: Pepper Berry
 date: jan 29th 2025
 use: this is our subsrciber file for the simplest motor movement possible in ros2
-use in conjunction with the input_easy.py our publisher file
+use in conjunction with the pub_easy.py our publisher file
 """
 
 #ros 2 python client library
@@ -19,9 +19,9 @@ import board
 import busio
 
 #initalizing 
-class ServoSingle(Node):
+class SubEasy(Node):
     def __init__(self):
-        super().__init__('servo_single')
+        super().__init__('sub_easy')
         #initalizing the board and its fequency
         self.pca = adafruit_pca9685.PCA9685(board.I2C())
         self.pca.frequency = 50
@@ -48,7 +48,7 @@ class ServoSingle(Node):
 # defines the main
 def main(args=None):
     rclpy.init(args=args) #initalizes library
-    node = ServoSingle() #creates an instance
+    node = SubEasy() #creates an instance
     rclpy.spin(node) #keep running and process when it gets a message
     node.destroy_node() #destroys when done
     rclpy.shutdown()
