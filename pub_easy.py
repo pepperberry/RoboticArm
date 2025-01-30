@@ -13,9 +13,9 @@ from rclpy.node import Node
 from std_msgs.msg import Float32
 
 #initalizing
-class InputEasy(Node):
+class PubEasy(Node):
   def __init__(self):
-    super().__init__('input_easy')
+    super().__init__('pub_easy')
 
     #creating a publisher, publishing the topic 'servo_command' this is what links our subscriber and publisher files
     self.publisher_=self.create_publisher(Float32, 'servo_command', 10)
@@ -30,7 +30,7 @@ class InputEasy(Node):
 
 def main(args=None):
   rclpy.init(args=args)
-  input_control = InputEasy()
+  input_control = PubEasy()
   rclpy.shutdown()
 
 if __name__ == '__main__':
