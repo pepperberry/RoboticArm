@@ -39,7 +39,7 @@ class InputControl(Node):
           self.angle += 10.0
         elif command == 's':
           self.angle -=10.0
-        msg = Float64()
+        msg = Float32()
         msg.data = self.angle
         self.publisher_.publish(msg)
         print("published: " + str(self.angle))
