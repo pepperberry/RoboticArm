@@ -16,7 +16,7 @@ class PubMultiInput(Node):
     super().__init__('pub_multi_input')
     
     #setup an inital angle to modify 
-    self.angle = [245,0,0,0,0] 
+    self.angle = [245,220,220,0,0] 
     
     self.publisher_=self.create_publisher(Float64MultiArray, 'servo_command', 10)
     self.first();
