@@ -9,7 +9,7 @@ use in conjunction with the servo_single.py our subsriber file
 import rclpy
 from rclpy.node import Node
 
-from std_msgs.msg import Float64
+from std_msgs.msg import Float32
 
 class InputControl(Node):
   def __init__(self):
@@ -18,13 +18,13 @@ class InputControl(Node):
     #setup an inital angle to modify 
     self.angle = 90.0
     
-    self.publisher_=self.create_publisher(Float64, 'servo_command', 10)
+    self.publisher_=self.create_publisher(Float32, 'servo_command', 10)
     self.first();
     self.run();
 
   #passed a intial message to set the motor to our intial angle
   def first(self):
-    msg = Float64()
+    msg = Float32()
     msg.data = self.angle
     self.publisher_.publish(msg)
     print("published inital")
