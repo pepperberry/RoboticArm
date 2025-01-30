@@ -5,7 +5,7 @@ from rclpy.node import Node
 #publish and subscribe to messages w/ floatng point numbers
 from std_msgs.msg import Float64MultiArray 
 
-import keyboard
+from pynput import keyboard
 
 class KeyboardController(Node):
     def __init__(self):
