@@ -2,7 +2,7 @@
 author: Pepper Berry
 date: jan 29th 2025
 use: this is our publisher file for the simplest motor movement possible in ros2
-use in conjunction with the servo_single.py our subsriber file
+use in conjunction with the sub_easy.py our subsriber file
 """
 
 #ros 2 python client library
