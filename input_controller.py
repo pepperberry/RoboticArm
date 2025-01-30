@@ -24,9 +24,9 @@ class InputControl(Node):
 
   #passed a intial message to set the motor to our intial angle
   def first(self):
-    msg = Float64MultiArray()
+    msg = Float64()
     msg.data = self.angle
-    self.publisher.publish(msg)
+    self.publisher_.publish(msg)
     print("published inital")
 
    #input how you want it to move changes the inital angle then publishes it
@@ -39,9 +39,9 @@ class InputControl(Node):
           self.angle += 1.0
         elif command == 's':
           self.angle -=1.0
-        msg = Float64MultiArray()
+        msg = Float64()
         msg.data = self.angle
-        self.publisher.publish(msg)
+        self.publisher_.publish(msg)
         print("published")
     except KeyboardInterrupt:
       pass
