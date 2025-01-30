@@ -24,7 +24,7 @@ class InputEasy(Node):
   #basically just publishes 40 degrees to the topic change if needed change this
   def run(self):
     msg = Float32()
-    msg.data = 40.0
+    msg.data = 245.0
     self.publisher_.publish(msg)
     print("published")
 
