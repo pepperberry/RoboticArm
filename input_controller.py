@@ -4,6 +4,7 @@ date: jan 29th 2025
 use: this is our publisher file for the simplest motor movement possible in ros2 
 with actual inputs!!! comments in this file will only be about the changes between this file and input_easy.py
 use in conjunction with the servo_single.py our subsriber file
+use command 'a' for pos direction and 's' for neg direction
 """
 
 import rclpy
