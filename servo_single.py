@@ -10,7 +10,7 @@ import rclpy
 from rclpy.node import Node 
 
 #publish and subscribe to messages w/ floatng point numbers (degrees of rotation)
-from std_msgs.msg import Float64
+from std_msgs.msg import Float32
 
 #imports the pca9865 board libraries to interact with it
 import adafruit_pca9685
@@ -27,7 +27,7 @@ class ServoSingle(Node):
         self.pca.frequency = 50
 
         #creating a subscription to the outputted message to the topic 'servo_command' this is the common factor between the two files
-        self.subscription = self.create_subscription(Float64, 'servo_command', self.listener_callback, 10)
+        self.subscription = self.create_subscription(Float32, 'servo_command', self.listener_callback, 10)
         #self.subscription
         
         
