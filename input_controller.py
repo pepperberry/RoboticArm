@@ -16,7 +16,7 @@ class InputControl(Node):
     super().__init__('input_controller')
     
     #setup an inital angle to modify 
-    self.angle = 0.0
+    self.angle = 245.0
     
     self.publisher_=self.create_publisher(Float32, 'servo_command', 10)
     self.first();
@@ -42,7 +42,7 @@ class InputControl(Node):
         msg = Float64()
         msg.data = self.angle
         self.publisher_.publish(msg)
-        print("published")
+        print("published: " + str(self.angle))
     except KeyboardInterrupt:
       pass
 
