@@ -1,30 +1,30 @@
 """
 author: Pepper Berry
-date: jan 29th 2025
-use: this is our publisher file for the simplest motor movement possible in ros2 
-with actual inputs!!! comments in this file will only be about the changes between this file and input_easy.py
-use in conjunction with the servo_single.py our subsriber file
+date: jan 30th 2025
+use: this is our publisher file for simple motor movements for all 5 motos controlled by keyboard inputs
+the subscriber file for this is called servo_controller
+the diffrence between this and the previous files is that it uses an array and overall has more code
 """
 
 import rclpy
 from rclpy.node import Node
 
-from std_msgs.msg import Float64
+from std_msgs.msg import Float64MultiArray
 
 class InputControl(Node):
   def __init__(self):
     super().__init__('input_controller')
     
     #setup an inital angle to modify 
-    self.angle = 90.0
+    self.angle = [245] 
     
-    self.publisher_=self.create_publisher(Float64, 'servo_command', 10)
+    self.publisher_=self.create_publisher(Float64MultiArray, 'servo_command', 10)
     self.first();
     self.run();
 
   #passed a intial message to set the motor to our intial angle
   def first(self):
-    msg = Float64()
+    msg = Float64MultiArray()
     msg.data = self.angle
     self.publisher_.publish(msg)
     print("published inital")
@@ -39,7 +39,7 @@ class InputControl(Node):
           self.angle += 1.0
         elif command == 's':
           self.angle -=1.0
-        msg = Float64()
+        msg = Float64MultiArray()
         msg.data = self.angle
         self.publisher_.publish(msg)
         print("published")
