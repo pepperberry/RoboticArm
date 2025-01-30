@@ -16,7 +16,7 @@ class InputControl(Node):
     super().__init__('input_controller')
     
     #setup an inital angle to modify 
-    self.angle = 90.0
+    self.angle = 0.0
     
     self.publisher_=self.create_publisher(Float32, 'servo_command', 10)
     self.first();
@@ -36,9 +36,9 @@ class InputControl(Node):
         command = input("enter command: ")
         print("captuerd command")
         if command == 'a':
-          self.angle += 1.0
+          self.angle += 10.0
         elif command == 's':
-          self.angle -=1.0
+          self.angle -=10.0
         msg = Float64()
         msg.data = self.angle
         self.publisher_.publish(msg)
