@@ -10,7 +10,7 @@ import rclpy
 from rclpy.node import Node
 
 #publish and subscribe to messages w/ floatng point numbers (degrees of rotation)
-from std_msgs.msg import Float64
+from std_msgs.msg import Float32
 
 #initalizing
 class InputEasy(Node):
@@ -18,12 +18,12 @@ class InputEasy(Node):
     super().__init__('input_easy')
 
     #creating a publisher, publishing the topic 'servo_command' this is what links our subscriber and publisher files
-    self.publisher_=self.create_publisher(Float64, 'servo_command', 10)
+    self.publisher_=self.create_publisher(Float32, 'servo_command', 10)
     self.run();
 
   #basically just publishes 40 degrees to the topic change if needed change this
   def run(self):
-    msg = Float64()
+    msg = Float32()
     msg.data = 40.0
     self.publisher_.publish(msg)
     print("published")
