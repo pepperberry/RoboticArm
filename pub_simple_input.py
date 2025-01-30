@@ -2,8 +2,8 @@
 author: Pepper Berry
 date: jan 29th 2025
 use: this is our publisher file for the simplest motor movement possible in ros2 
-with actual inputs!!! comments in this file will only be about the changes between this file and input_easy.py
-use in conjunction with the servo_single.py our subsriber file
+with actual inputs!!! comments in this file will only be about the changes between this file and pub_easy.py
+use in conjunction with the sub_easy.py our subsriber file
 use command 'a' for pos direction and 's' for neg direction
 """
 
@@ -12,9 +12,9 @@ from rclpy.node import Node
 
 from std_msgs.msg import Float32
 
-class InputControl(Node):
+class PubSimpleInput(Node):
   def __init__(self):
-    super().__init__('input_controller')
+    super().__init__('pub_simple_input')
     
     #setup an inital angle to modify 
     self.angle = 245.0
@@ -49,7 +49,7 @@ class InputControl(Node):
 
 def main(args=None):
   rclpy.init(args=args)
-  input_control = InputControl()
+  input_control = PubSimpleInput()
   rclpy.shutdown()
 
 if __name__ == '__main__':
