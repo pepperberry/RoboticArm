@@ -154,12 +154,14 @@ For this ROS project, we use the basics: nodes, a topic, a publisher, and a subs
 Nodes perform individual tasks. For example, in a very complex robot, you might have one node for the camera, one for driving, and one for the arms.  
 In this project, we have two nodes: the Publisher node and the Subscriber node. Each node can publish and subscribe to multiple topics, but to keep it simple, we are having one node for each.  
 
-- Publisher and Subscriber  
+- Publisher and Subscriber
+  
 In the example code, each file has ‘pub’ if it is a publisher and ‘sub’ if it is a subscriber.  
 The publisher node puts out information.  
 The subscriber node receives this information. It's like playing a game of telephone.  
 
-- Topics  
+- Topics
+  
 How does the subscriber node know what to ‘listen’ to? It listens for a particular topic. When the publisher node initializes, it names the topic it is publishing to. In our code, it's called ‘servo_command’.  
 
 Now that we understand these basic concepts, let's delve into the key parts of ROS2 code for this project.
