@@ -150,7 +150,8 @@ At this point, you can code some simple movements using this code. It is advisab
 To go more in depth or for information beyond the scope of this project, you can refer to the ROS2 Jazzy Documentation. It contains a lot of tutorials, ranging in difficulty, depending on what you want to achieve. You don’t need to look at this to understand the project.  
 For this ROS project, we use the basics: nodes, a topic, a publisher, and a subscriber.  
 
-#### Nodes  
+- Nodes  
+
 Nodes perform individual tasks. For example, in a very complex robot, you might have one node for the camera, one for driving, and one for the arms.  
 In this project, we have two nodes: the Publisher node and the Subscriber node. Each node can publish and subscribe to multiple topics, but to keep it simple, we are having one node for each.  
 
@@ -165,3 +166,6 @@ The subscriber node receives this information. It's like playing a game of telep
 How does the subscriber node know what to ‘listen’ to? It listens for a particular topic. When the publisher node initializes, it names the topic it is publishing to. In our code, it's called ‘servo_command’.  
 
 Now that we understand these basic concepts, let's delve into the key parts of ROS2 code for this project.
+
+#### Imports:  
+
