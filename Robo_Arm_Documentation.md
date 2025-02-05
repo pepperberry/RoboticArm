@@ -28,7 +28,7 @@ Objectives:
 4. Create your first ROS2 package.
 5. Code in ROS2.
 
-### Objective 1 Learn How to Set Up the Raspberry Pi with Linux Ubuntu and ROS2 Jazzy
+## Objective 1 Learn How to Set Up the Raspberry Pi with Linux Ubuntu and ROS2 Jazzy
 
 #### Prepare Your Materials:
 
@@ -76,7 +76,7 @@ These commands will fully install ROS2.
 [Install Linux Ubuntu](https://www.youtube.com/watch?v=dAazTc2xuMw&ab_channel=AleksandarHaberPhD) 
 [Install ROS2 Jazzy](https://www.youtube.com/watch?v=Vl9tkUv7Y7o&ab_channel=AleksandarHaberPhD)
 
-### Objective 2: Learn How to Change the Physical Setup of the Robotic Arm to Function with ROS2
+## Objective 2: Learn How to Change the Physical Setup of the Robotic Arm to Function with ROS2
 
 #### Remove the SSC-32U Board:  
 When you receive the robotic arm, it will come with a PCB board labeled SSC-32U.  
@@ -100,7 +100,7 @@ Attach the heat sink, which is usually a piece of metal with grooves to conduct 
 If you have tiny grey squares, place them on the raised parts of the bottom of the cooling piece so that they touch the parts once screwed on.  
 Make sure to remove the plastic pieces from both sides before screwing the heat sink together.  
 
-### Objective 3: Learn How to Code a Simple Robot Arm Program and Download the Adafruit Libraries  
+## Objective 3: Learn How to Code a Simple Robot Arm Program and Download the Adafruit Libraries  
 
 Now that ROS2 is set up, we will set up the robot arm and PCA9685 board.  
 
@@ -144,7 +144,7 @@ To run the code, type the following command, then press Enter:
 #### Testing and Notes:  
 At this point, you can code some simple movements using this code. It is advisable to write down which ports go to which motors to ensure proper movements. Also, test which way each motor moves to  determine if 0 degrees is up or down.  
 
-### Objective 5
+## Objective 5
 
 #### Additional Information and Key Concepts  
 To go more in depth or for information beyond the scope of this project, you can refer to the ROS2 Jazzy Documentation. It contains a lot of tutorials, ranging in difficulty, depending on what you want to achieve. You don’t need to look at this to understand the project.  
