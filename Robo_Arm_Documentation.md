@@ -37,22 +37,16 @@ Download the Raspberry Pi Imager from [Raspberry Pi Software](https://www.raspbe
 
 #### Install the Operating System:
 
-Once the software has finished installing, select "Raspberry Pi 5" as the hardware.
-
-First, select "General-purpose OS," then click "Ubuntu 24.04.1 LTS."
-
-Select the SD card you are using as the storage device.
-
+Once the software has finished installing, select "Raspberry Pi 5" as the hardware.  
+First, select "General-purpose OS," then click "Ubuntu 24.04.1 LTS."  
+Select the SD card you are using as the storage device.  
 Once the installation is complete, remove the SD card and insert it into the Raspberry Pi.
 
 #### Connect the Necessary Components:
 
-Connect the power supply, micro SD card, display cord, and keyboard/mouse.
-
-The micro SD card slot is on the bottom of the Raspberry Pi.
-
-Use a 27W USB-C cable for the power supply.
-
+Connect the power supply, micro SD card, display cord, and keyboard/mouse.  
+The micro SD card slot is on the bottom of the Raspberry Pi.  
+Use a 27W USB-C cable for the power supply.  
 For the keyboard and mouse, we will use a tiny touchpad keyboard, but you can use any mouse and keyboard combo. Plug it into the USB port on the Raspberry Pi.
 
 Connect the Raspberry Pi to a monitor. Use HDMI port 0 and a suitable cord for your monitor.
