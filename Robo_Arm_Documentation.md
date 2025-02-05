@@ -59,3 +59,17 @@ Select your Wi-Fi network, as you will need Wi-Fi later.
 #### Update the System:
 
 Open the terminal and type in the following commands one at a time, pressing Enter after each command:
+'sudo apt update'
+'sudo apt upgrade'
+'sudo apt install git'
+
+#### Download ROS2:
+Once Ubuntu is set up, download ROS2 using scripts from GitHub by entering the following commands in the terminal one at a time, pressing Enter after each command:
+'git clone https://github.com/SU-Innovation-Lab/ROS2'
+'cd ROS2'
+'cd config'
+'chmod +x setup.sh'
+'./setup.sh'
+These commands will fully install ROS2.
+
+
