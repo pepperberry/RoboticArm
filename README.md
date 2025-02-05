@@ -73,8 +73,8 @@ Once Ubuntu is set up, download ROS2 using scripts from GitHub by entering the f
 `./setup.sh`  
 These commands will fully install ROS2.  
 
-####Reference Videos (Optional):  
-[Install Linux Ubuntu](https://www.youtube.com/watch?v=dAazTc2xuMw&ab_channel=AleksandarHaberPhD) 
+**Reference Videos (Optional):**  
+[Install Linux Ubuntu](https://www.youtube.com/watch?v=dAazTc2xuMw&ab_channel=AleksandarHaberPhD)   
 [Install ROS2 Jazzy](https://www.youtube.com/watch?v=Vl9tkUv7Y7o&ab_channel=AleksandarHaberPhD)
 
 ## Objective 2: Learn How to Change the Physical Setup of the Robotic Arm to Function with ROS2
