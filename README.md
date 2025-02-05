@@ -109,13 +109,13 @@ Make sure to remove the plastic pieces from both sides before screwing the heat 
 
 Now that ROS2 is set up, we will set up the robot arm and PCA9685 board.  
 
-**Install Necessary Packages: **  
+**Install Necessary Packages:**  
 
 Open the terminal and enter the following commands. Press Enter between each line's command:  
 `sudo apt-get install python3-smbus`  
 `sudo apt-get install i2c-tools`  
 
-*Check Connection:*    
+**Check Connection:**   
 
 Make sure the PCA9685 is connected and enter the following terminal command, then press Enter:  
 `sudo i2cdetect -y 1`  
