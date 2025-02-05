@@ -114,6 +114,8 @@ Make sure the PCA9685 is connected and enter the following terminal command, the
 `sudo i2cdetect -y 1`  
 If the board is properly connected, it will output the connection details.  
 
+# there should be an image here
+
 #### Install Necessary Libraries:  
 Type the following commands into the command line, pressing Enter after each line:  
 `sudo apt-get install python3 python3-pip`  
@@ -129,10 +131,10 @@ Create a folder to put your code in. Use the following command:
 Create and open a new file with the following command:
 `nano robotFirstTest.py`
 
-Once the new file is open, add the following code:
-`from adafruit_servokit import ServoKit
-kit = ServoKit(channels=16)
-kit.servo[0].angle = 180`  
+Once the new file is open, add the following code:  
+`from adafruit_servokit import ServoKit`  
+`kit = ServoKit(channels=16)`  
+`kit.servo[0].angle = 180`    
 This moves the motor on channel 0 to 180 degrees. Ensure that this won't cause the robot to bump into anything and that there is a motor in that spot.  
 To save and exit, press Control O, then Control X.  
 
@@ -141,3 +143,23 @@ To run the code, type the following command, then press Enter:
 
 #### Testing and Notes:  
 At this point, you can code some simple movements using this code. It is advisable to write down which ports go to which motors to ensure proper movements. Also, test which way each motor moves to  determine if 0 degrees is up or down.  
+
+### Objective 5
+
+#### Additional Information and Key Concepts  
+To go more in depth or for information beyond the scope of this project, you can refer to the ROS2 Jazzy Documentation. It contains a lot of tutorials, ranging in difficulty, depending on what you want to achieve. You don’t need to look at this to understand the project.  
+For this ROS project, we use the basics: nodes, a topic, a publisher, and a subscriber.  
+
+#### Nodes  
+Nodes perform individual tasks. For example, in a very complex robot, you might have one node for the camera, one for driving, and one for the arms.  
+In this project, we have two nodes: the Publisher node and the Subscriber node. Each node can publish and subscribe to multiple topics, but to keep it simple, we are having one node for each.  
+
+- Publisher and Subscriber  
+In the example code, each file has ‘pub’ if it is a publisher and ‘sub’ if it is a subscriber.  
+The publisher node puts out information.  
+The subscriber node receives this information. It's like playing a game of telephone.  
+
+- Topics  
+How does the subscriber node know what to ‘listen’ to? It listens for a particular topic. When the publisher node initializes, it names the topic it is publishing to. In our code, it's called ‘servo_command’.  
+
+Now that we understand these basic concepts, let's delve into the key parts of ROS2 code for this project.
