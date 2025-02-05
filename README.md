@@ -180,3 +180,15 @@ Now that we understand these basic concepts, let's delve into the key parts of R
 
 **Imports:**  
 
+  `#ros 2 python client library
+  import rclpy 
+  from rclpy.node import Node`
+
+#publish and subscribe to messages w/ floatng point numbers (degrees of rotation)
+from std_msgs.msg import Float32
+
+#imports the pca9865 board libraries to interact with it
+import adafruit_pca9685
+from adafruit_pca9685 import PCA9685
+import board
+import busio`
