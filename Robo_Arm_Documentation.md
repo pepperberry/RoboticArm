@@ -59,17 +59,17 @@ Select your Wi-Fi network, as you will need Wi-Fi later.
 #### Update the System:
 
 Open the terminal and type in the following commands one at a time, pressing Enter after each command:  
-'sudo apt update'  
-'sudo apt upgrade'  
-'sudo apt install git'  
+`sudo apt update`   
+`sudo apt upgrade`  
+`sudo apt install git`  
 
 #### Download ROS2:
 Once Ubuntu is set up, download ROS2 using scripts from GitHub by entering the following commands in the terminal one at a time, pressing Enter after each command:  
-'git clone https://github.com/SU-Innovation-Lab/ROS2'  
-'cd ROS2'  
-'cd config'  
-'chmod +x setup.sh'  
-'./setup.sh'  
+`git clone https://github.com/SU-Innovation-Lab/ROS2`  
+`cd ROS2`  
+`cd config`  
+`chmod +x setup.sh`  
+`./setup.sh`  
 These commands will fully install ROS2.  
 
 ####Reference Videos (Optional):  
@@ -100,3 +100,44 @@ Attach the heat sink, which is usually a piece of metal with grooves to conduct 
 If you have tiny grey squares, place them on the raised parts of the bottom of the cooling piece so that they touch the parts once screwed on.  
 Make sure to remove the plastic pieces from both sides before screwing the heat sink together.  
 
+### Objective 3: Learn How to Code a Simple Robot Arm Program and Download the Adafruit Libraries  
+
+Now that ROS2 is set up, we will set up the robot arm and PCA9685 board.  
+
+#### Install Necessary Packages:  
+Open the terminal and enter the following commands. Press Enter between each line's command:  
+`sudo apt-get install python3-smbus`  
+`sudo apt-get install i2c-tools`  
+
+#### Check Connection:  
+Make sure the PCA9685 is connected and enter the following terminal command, then press Enter:  
+`sudo i2cdetect -y 1`  
+If the board is properly connected, it will output the connection details.  
+
+#### Install Necessary Libraries:  
+Type the following commands into the command line, pressing Enter after each line:  
+`sudo apt-get install python3 python3-pip`  
+`pip install RPi.GPIO`  
+`pip install Adafruit-Blinka`  
+`pip install adafruit-circuitpython-servokit`  
+
+#### Write Your First Python Program:  
+Create a folder to put your code in. Use the following command:  
+`mkdir robot_arm_code`
+`cd robot_arm_code`
+
+Create and open a new file with the following command:
+`nano robotFirstTest.py`
+
+Once the new file is open, add the following code:
+`from adafruit_servokit import ServoKit
+kit = ServoKit(channels=16)
+kit.servo[0].angle = 180`  
+This moves the motor on channel 0 to 180 degrees. Ensure that this won't cause the robot to bump into anything and that there is a motor in that spot.  
+To save and exit, press Control O, then Control X.  
+
+To run the code, type the following command, then press Enter:  
+`python3 robotFirstTest.py`  
+
+#### Testing and Notes:  
+At this point, you can code some simple movements using this code. It is advisable to write down which ports go to which motors to ensure proper movements. Also, test which way each motor moves to  determine if 0 degrees is up or down.  
