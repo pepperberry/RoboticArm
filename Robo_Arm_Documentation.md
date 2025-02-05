@@ -30,7 +30,7 @@ Objectives:
 
 ### Objective 1 Learn How to Set Up the Raspberry Pi with Linux Ubuntu and ROS2 Jazzy
 
-##### Prepare Your Materials:
+#### Prepare Your Materials:
 
 Grab your micro SD card and a USB to SD card reader.
 Download the Raspberry Pi Imager from [Raspberry Pi Software](https://www.raspberrypi.com/software/) onto your computer and choose the version based on your computer's operating system (Windows, Mac, or Linux).
