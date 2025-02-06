@@ -136,7 +136,7 @@ sudo i2cdetect -y 1
  
 If the board is properly connected, it will output the connection details.  
 
-# there should be an image here
+![output of sudo i2cdetect -y 1](https://cdn-learn.adafruit.com/assets/assets/000/001/700/original/raspberry_pi_i2cdetect.png?1396775470)
 
 **Install Necessary Libraries:**  
 
