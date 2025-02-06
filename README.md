@@ -310,7 +310,7 @@ This set has the same operational abilities as the 2nd set, except it controls a
 4th Set:  
 This set has the same abilities as the 3rd set but has a better user interface for using the robot arm. (not finished yet)
 
-* Publisher: `keyboard_controller.py`  
+* Publisher: not finished will be `pub_keyboard_best.py`
 * Subscriber: `sub_multi_motor.py`
 
 **running the code**
