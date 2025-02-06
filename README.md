@@ -73,12 +73,15 @@ sudo apt install git
 **Download ROS2:**  
 
 Once Ubuntu is set up, download ROS2 using scripts from GitHub by entering the following commands in the terminal one at a time, pressing Enter after each command:  
-`git clone https://github.com/SU-Innovation-Lab/ROS2`  
-`cd ROS2`  
-`cd config`  
-`chmod +x setup.sh`  
-`./setup.sh`  
-These commands will fully install ROS2.  
+```bash
+git clone https://github.com/SU-Innovation-Lab/ROS2`  
+cd ROS2  
+cd config  
+chmod +x setup.sh  
+./setup.sh
+```
+These commands will fully install ROS2. don't worry it will restart.
+
 
 **Reference Videos (Optional):**  
 [Install Linux Ubuntu](https://www.youtube.com/watch?v=dAazTc2xuMw&ab_channel=AleksandarHaberPhD)   
@@ -118,10 +121,11 @@ Now that ROS2 is set up, we will set up the robot arm and PCA9685 board.
 
 **Install Necessary Packages:**  
 
-Open the terminal and enter the following commands. Press Enter between each line's command:  
-`sudo apt-get install python3-smbus`  
-`sudo apt-get install i2c-tools`  
-
+Open the terminal and enter the following commands. Press Enter between each line's command:
+```bash
+sudo apt-get install python3-smbus  
+sudo apt-get install i2c-tools 
+```
 **Check Connection:**   
 
 Make sure the PCA9685 is connected and enter the following terminal command, then press Enter:  
@@ -132,25 +136,32 @@ If the board is properly connected, it will output the connection details.
 
 **Install Necessary Libraries:**  
 
-Type the following commands into the command line, pressing Enter after each line:  
-`sudo apt-get install python3 python3-pip`  
-`pip install RPi.GPIO`  
-`pip install Adafruit-Blinka`  
-`pip install adafruit-circuitpython-servokit`  
+Type the following commands into the command line, pressing Enter after each line: 
+```bash
+sudo apt-get install python3 python3-pip  
+pip install RPi.GPIO 
+pip install Adafruit-Blinka
+pip install adafruit-circuitpython-servokit
+```
 
 **Write Your First Python Program:**  
 
 Create a folder to put your code in. Use the following command:  
-`mkdir robot_arm_code`
-`cd robot_arm_code`
+```bash
+mkdir robot_arm_code
+cd robot_arm_code
+```
 
 Create and open a new file with the following command:
 `nano robotFirstTest.py`
 
 Once the new file is open, add the following code:  
-`from adafruit_servokit import ServoKit`  
-`kit = ServoKit(channels=16)`  
-`kit.servo[0].angle = 180`    
+```python
+from adafruit_servokit import ServoKit  
+kit = ServoKit(channels=16)
+kit.servo[0].angle = 180
+```
+
 This moves the motor on channel 0 to 180 degrees. Ensure that this won't cause the robot to bump into anything and that there is a motor in that spot.  
 To save and exit, press Control O, then Control X.  
 
@@ -186,10 +197,10 @@ How does the subscriber node know what to ‘listen’ to? It listens for a part
 Now that we understand these basic concepts, let's delve into the key parts of ROS2 code for this project.
 
 **Imports:**  
-
-  `#ros 2 python client library
-  import rclpy 
-  from rclpy.node import Node`
+```python
+#ros 2 python client library
+import rclpy 
+from rclpy.node import Node
 
 #publish and subscribe to messages w/ floatng point numbers (degrees of rotation)
 from std_msgs.msg import Float32
@@ -199,3 +210,61 @@ import adafruit_pca9685
 from adafruit_pca9685 import PCA9685
 import board
 import busio`
+```
+
+Both files need the ROS2 Python client library to be imported, as both use ROS2 functionality (publishers and subscribers). Additionally, they need to import the same type of message so the subscriber can understand the message sent by the publisher. Only the subscriber needs the Adafruit libraries, as only the subscriber works with the Adafruit board.
+
+**Subscriber & publisher**
+
+```python
+self.subscription = self.create_subscription(Float32, 'servo_command', self.listener_callback, 10)
+
+self.publisher_=self.create_publisher(Float32, 'servo_command', 10)
+```
+
+Each file needs a statement to initialize their subscriber/publisher. Both have the same fundamental parts in the parentheses. `Float32` is our message variable type which we imported above. `servo_command` is our topic. `10` is the size of our message queue. All three of these things need to be consistent across the publisher and subscriber.
+
+`self.listener_callback` is what happens after we get the message data and can have any name as long as it is connected to the defined function.
+
+```python
+ def listener_callback(self, msg):
+     
+     #lets us know what the single servo is
+     channel = 0
+     
+     print("got message")
+     self.set_servo_angle(channel, msg.data)
+```
+
+This function can then perform any desired action with the data. In this simple case, it sets a servo in channel `0` to the degree specified in the message.
+
+**Publishing a message:**
+For each message, you need to initialize it as the type of message. If you want to know all the types of messages you can send and their syntax, refer to the [ROS2 Message Documentation](https://docs.ros.org/en/melodic/api/std_msgs/html/index-msg.html). Then, specify what data the message holds and finally publish the message.  
+Each call to a message creates a new message. The only job of a message is to hold and publish data.
+
+**Diagram:**
+Here is a commonly used diagram to describe how nodes are connected by topics and how messages are published and received: [Understanding ROS2 Nodes](https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes.html)
+
+**Pre-Written Code:**
+The GitHub contains four sets of code, each working through a specific part of writing code in ROS2. In the end, you will have code that can move all five motors using keyboard commands, similar to how you would move around in a video game. Moving forward, we can use this code and sensors to create more complex movements, including using OpenAI along with a camera to identify particular things, like playing rock-paper-scissors.
+
+1st Set:
+This is the bare-bones code for moving one motor (currently set to motor `0`) to a hard-coded position.
+
+* Publisher: `pub_easy.py`  
+* Subscriber: `sub_easy.py`  
+
+2nd Set:
+This is the 1st set, but you can input commands to move the robot left or right, still only moving one motor.
+
+* Publisher: `pub_simple_input.py`  
+* Subscriber: `sub_easy.py`  
+
+3rd Set:
+This set has the same operational abilities as the 2nd set, except it controls all five motors.
+
+* Publisher: `pub_multi_input.py`  
+* Subscriber: `sub_easy.py`  
+
+4th Set:
+This set has the same abilities as the 3rd set but has a better user interface for controlling the robot arm. (not finished yet)
