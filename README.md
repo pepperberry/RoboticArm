@@ -209,7 +209,7 @@ next let's make sure our files are setup properly, use `ls` to find what files a
 
 **Additional Information and Key Concepts**  
 
-To go more in depth or for information beyond the scope of this project, you can refer to the ROS2 Jazzy Documentation. It contains a lot of tutorials, ranging in difficulty, depending on what you want to achieve. You don’t need to look at this to understand the project.  
+To go more in depth or for information beyond the scope of this project, you can refer to the [ROS2 Jazzy Documentation](https://docs.ros.org/en/jazzy/Tutorials.html). It contains a lot of tutorials, ranging in difficulty, depending on what you want to achieve. You don’t need to look at this to understand the project.  
 For this ROS project, we use the basics: nodes, a topic, a publisher, and a subscriber.  
 
 - Nodes  
