@@ -247,6 +247,11 @@ Each file needs a statement to initialize their subscriber/publisher. Both have 
 This function can then perform any desired action with the data. In this simple case, it sets a servo in channel `0` to the degree specified in the message.
 
 **Publishing a message:**  
+```python
+msg = Float32()
+msg.data = 245.0
+self.publisher_.publish(msg)
+```
 For each message, you need to initialize it as the type of message. If you want to know all the types of messages you can send and their syntax, refer to the [ROS2 Message Documentation](https://docs.ros.org/en/melodic/api/std_msgs/html/index-msg.html). Then, specify what data the message holds and finally publish the message.  
 Each call to a message creates a new message. The only job of a message is to hold and publish data.
 
