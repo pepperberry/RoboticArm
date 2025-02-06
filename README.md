@@ -116,6 +116,10 @@ Attach the heat sink, which is usually a piece of metal with grooves to conduct 
 If you have tiny grey squares, place them on the raised parts of the bottom of the cooling piece so that they touch the parts once screwed on.  
 Make sure to remove the plastic pieces from both sides before screwing the heat sink together.  
 
+**Connecting the board to the PI:**  
+![setup of board connecting the wires from PCA9685 board to the pi](https://cdn-learn.adafruit.com/assets/assets/000/069/564/original/components_raspi_pca9685_i2c_with_servo.jpg?1547757668)
+here is the setup just connect the wires as shown in the image.
+
 ## Objective 3: Learn How to Code a Simple Robot Arm Program and Download the Adafruit Libraries  
 
 Now that ROS2 is set up, we will set up the robot arm and PCA9685 board.  
