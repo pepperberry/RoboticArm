@@ -169,7 +169,7 @@ kit.servo[0].angle = 180
 ```
 
 This moves the motor on channel 0 to 180 degrees. Ensure that this won't cause the robot to bump into anything and that there is a motor in that spot.  
-To save and exit, press Control O, then Control X.  
+To save and exit, press <kbd>Ctrl</kbd> + <kbd>o</kbd>, then <kbd>Ctrl</kbd> + <kbd>x</kbd> .  
 
 To run the code, type the following command, then press Enter:  
 ```bash
@@ -180,7 +180,29 @@ python3 robotFirstTest.py
 
 At this point, you can code some simple movements using this code. It is advisable to write down which ports go to which motors to ensure proper movements. Also, test which way each motor moves to  determine if 0 degrees is up or down.  
 
-## Objective 5
+## Objective 4: Createing your first ROS2 package.
+
+Source your setup and create your ros2 work station  
+```bash
+source /opt/ros/jazzy/setup.bash
+cd ~
+mkdir -p ros2_ws/src
+cd ~/ros2_ws
+```
+next build the package and create it
+```bash
+colcon build
+source install/setup.bash
+cd src
+ros2 pkg create --build-type ament_python package
+```
+replace `package` with the name of your package, I named mine RoboArm but you can choose what you would like.
+
+**file setup**
+next let's make sure our files are setup properly
+
+
+## Objective 5: Codeing simple programs in ROS2.
 
 **Additional Information and Key Concepts**  
 
@@ -277,7 +299,19 @@ This is the 1st set, but you can input commands to move the robot left or right,
 This set has the same operational abilities as the 2nd set, except it controls all five motors.
 
 * Publisher: `pub_multi_input.py`  
-* Subscriber: `sub_easy.py`  
+* Subscriber: `sub_multi_motor.py`  
 
 4th Set:  
-This set has the same abilities as the 3rd set but has a better user interface for controlling the robot arm. (not finished yet)
+This set has the same abilities as the 3rd set but has a better user interface for using the robot arm. (not finished yet)
+
+* Publisher: `keyboard_controller.py`  
+* Subscriber: `sub_multi_motor.py`
+
+**running the code**
+once you have code written make sure to do these three steps, later we can simplify this using a launch file but right now we will do this so we can debug files individually
+```bash
+cd ~/ros2_ws
+source ~/ros2_ws/install/setup.bash
+ros2 run package file.py
+```
+replace the `package` with your package name and `file.py` with the name of your file you will need a terminal window open for each file you are running and to do these steps in each window.
