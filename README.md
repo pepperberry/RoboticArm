@@ -101,6 +101,7 @@ Connect the wires to the PCA9685 board in the following order:
  * Inside: pulse/PWM  
  * Middle: VS1/V+  
  * Outside: GND  
+
 Ensure the same order is followed for each row (row 0 to row 0, etc.).  
 
 **Connect the Board to the Power Supply:**  
@@ -221,7 +222,7 @@ import busio`
 
 Both files need the ROS2 Python client library to be imported, as both use ROS2 functionality (publishers and subscribers). Additionally, they need to import the same type of message so the subscriber can understand the message sent by the publisher. Only the subscriber needs the Adafruit libraries, as only the subscriber works with the Adafruit board.
 
-**Subscriber & publisher**
+**Subscriber & publisher:**
 
 ```python
 self.subscription = self.create_subscription(Float32, 'servo_command', self.listener_callback, 10)
