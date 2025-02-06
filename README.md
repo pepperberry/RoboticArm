@@ -196,10 +196,13 @@ source install/setup.bash
 cd src
 ros2 pkg create --build-type ament_python package
 ```
-replace `package` with the name of your package, I named mine RoboArm but you can choose what you would like.
+replace `package` with the name of your package, I named mine RoboArm but you can choose what you would like.  
+you can make multiple packages but all of them should be included in your src folder.
 
 **file setup**
-next let's make sure our files are setup properly
+next let's make sure our files are setup properly, use `ls` to find what files and folders are in your package and `nano` to open:
+* `package.xml` & `setup.py`: make sure to update the package description, license, and maintiner email.
+
 
 
 ## Objective 5: Codeing simple programs in ROS2.
@@ -308,6 +311,12 @@ This set has the same abilities as the 3rd set but has a better user interface f
 * Subscriber: `sub_multi_motor.py`
 
 **running the code**
+
+navigate to `setup.py` and update the `console_scripts` to include the files you are going to use in the format:*check this is true  
+```python
+file1 = package.file1:main
+file2 = package.file2:main
+```
 once you have code written make sure to do these three steps, later we can simplify this using a launch file but right now we will do this so we can debug files individually
 ```bash
 cd ~/ros2_ws
