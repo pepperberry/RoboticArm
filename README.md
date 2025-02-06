@@ -195,6 +195,7 @@ colcon build
 source install/setup.bash
 cd src
 ros2 pkg create --build-type ament_python package
+cd package
 ```
 replace `package` with the name of your package, I named mine RoboArm but you can choose what you would like.  
 you can make multiple packages but all of them should be included in your src folder.
