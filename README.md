@@ -41,7 +41,7 @@ Objectives:
 
 1. Install the Raspberry PI imager on your personal computer. Make sure your card reader is connected to your personal computer.
 1. Once the software has finished installing, select `Raspberry Pi 5` as the hardware.  
-1. Select `General-purpose OS` then select `Ubuntu 24.04.1 LTS`.  
+1. Select `General-purpose OS` then select `Desktop Ubuntu 24.04.1 LTS`.  
 1. Select the SD card you are using as the storage device.  
 1. Once the installation is complete, remove the SD card from the card reader.
 
