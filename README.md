@@ -118,7 +118,7 @@ Make sure to remove the plastic pieces from both sides before screwing the heat 
 
 **Connecting the board to the PI:**  
 ![setup of board connecting the wires from PCA9685 board to the pi](https://cdn-learn.adafruit.com/assets/assets/000/069/564/original/components_raspi_pca9685_i2c_with_servo.jpg?1547757668)
-here is the setup just connect the wires as shown in the image.
+here is the setup just connect the wires as shown in the image, no bread board just connect directly.
 
 ## Objective 3: Learn How to Code a Simple Robot Arm Program and Download the Adafruit Libraries  
 
