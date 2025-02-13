@@ -97,7 +97,7 @@ Once the board is removed, put the screws back into the robot for added stabilit
 
 **Attach the PCA9685 Board:**  
 
-Connect the wires to the PCA9685 board in the following order:  
+Connect the robots motor wires to the PCA9685 board in the following order (reference the image below if confused):  
  * Inside: pulse/PWM  
  * Middle: VS1/V+  
  * Outside: GND  
