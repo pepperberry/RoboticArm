@@ -74,7 +74,7 @@ sudo apt install git
 
 Once Ubuntu is set up, download ROS2 using scripts from GitHub by entering the following commands in the terminal one at a time, pressing Enter after each command:  
 ```bash
-git clone https://github.com/SU-Innovation-Lab/ROS2`  
+git clone https://github.com/SU-Innovation-Lab/ROS2
 cd ROS2  
 cd config  
 chmod +x setup.sh  
