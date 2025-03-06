@@ -194,6 +194,7 @@ mkdir -p ros2_ws/src
 cd ~/ros2_ws
 ```
 next build the package and create it
+
 replace `package` with the name of your package, I named mine RoboArm but you can choose what you would like.  
 you can make multiple packages but all of them should be included in your src folder.
 
@@ -204,14 +205,14 @@ cd src
 ros2 pkg create --build-type ament_python package
 cd package
 ```
-inside the 'package' directory you 
-
+inside `~/ros2_ws/src` you will find your new package
 **file setup**
 next let's make sure our files are setup properly, use `ls` to find what files and folders are in your package and `nano` to open:
 * `package.xml` & `setup.py`: make sure to update the package description, license, and maintiner email.
 
-## Objective 5: Codeing simple programs in ROS2.
+## Objective 5: Codeing simple programs in ROS2. 
 
+when creating your files make sure to put them in `~/ros2_ws/src/package/package` this is where ros2 will look for your code
 
 **Additional Information and Key Concepts**  
 
@@ -318,7 +319,7 @@ This set has the same abilities as the 3rd set but has a better user interface f
 
 **running the code**
 
-navigate to `setup.py` and update the `console_scripts` to include the files you are going to use in the format:*check this is true  
+navigate to `setup.py` and update the `console_scripts` to include the files you are going to use in the format:
 ```python
 file1 = package.file1:main
 file2 = package.file2:main
