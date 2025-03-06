@@ -194,6 +194,9 @@ mkdir -p ros2_ws/src
 cd ~/ros2_ws
 ```
 next build the package and create it
+replace `package` with the name of your package, I named mine RoboArm but you can choose what you would like.  
+you can make multiple packages but all of them should be included in your src folder.
+
 ```bash
 colcon build
 source install/setup.bash
@@ -201,14 +204,14 @@ cd src
 ros2 pkg create --build-type ament_python package
 cd package
 ```
-replace `package` with the name of your package, I named mine RoboArm but you can choose what you would like.  
-you can make multiple packages but all of them should be included in your src folder.
+inside the 'package' directory you 
 
 **file setup**
 next let's make sure our files are setup properly, use `ls` to find what files and folders are in your package and `nano` to open:
 * `package.xml` & `setup.py`: make sure to update the package description, license, and maintiner email.
 
 ## Objective 5: Codeing simple programs in ROS2.
+
 
 **Additional Information and Key Concepts**  
 
