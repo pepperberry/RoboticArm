@@ -27,6 +27,7 @@ Objectives:
 3. Learn how to code a simple robot arm program and download the Adafruit libraries.
 4. Create your first ROS2 package.
 5. Code in ROS2.
+6.  .URDF's and 3d modeling the robotic arm
 
 ## Objective 1: Set Up the Raspberry Pi with Linux Ubuntu and ROS2 Jazzy
 
@@ -331,3 +332,7 @@ source ~/ros2_ws/install/setup.bash
 ros2 run package file.py
 ```
 replace the `package` with your package name and `file.py` with the name of your file you will need a terminal window open for each file you are running and to do these steps in each window.
+
+## Objective 6:  .URDF's and 3d modeling the robotic arm
+
+for the current robotic arm we already have a .urdf file that was painful to create but can allow you to visualize movements of the robotic arm.
