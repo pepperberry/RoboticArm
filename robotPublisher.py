@@ -5,7 +5,6 @@ import cv2
 import rclpy
 from sensor_msgs.msg import Image
 from rclpy.node import Node 
-from cv_bridge import CvBridge 
 import cvzone
 from cvzone.HandTrackingModule import HandDetector
 import time
@@ -54,6 +53,7 @@ class PublisherNodeClass(Node):
                                     if fingers ==[0,1,1,0,0]:
                                           playerMove = 3 #scissors
                                     randomNumber = random.randint(1,3)
+                                    #publish random number
                                     #player Wins
                                     if (playerMove == 1 and randomNumber == 3) or (playerMove == 2 and randomNumber == 1) or (playerMove == 3 and randomNumber == 2):
                                           self.scores[1] +=1
