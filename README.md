@@ -350,14 +350,14 @@ to best seperate this we will have 3 nodes:
 
 cameraPublisher.py - > robotPublisher.py(outputs to display) -> robotSubsriber.py(outputs to robot)
 
-'cameraPublisher.py' will get the images and publish the image
+`cameraPublisher.py` will get the images and publish the image
 
-'robotPublisher.py' will take in the image and do the bulk of playing the game, displaying the scores as well as the image and giveing you a countdown clock when the game is started. 
+`robotPublisher.py` will take in the image and do the bulk of playing the game, displaying the scores as well as the image and giveing you a countdown clock when the game is started. 
 
-'robotSubscriber.py' will take in the message as to what move should be done, with 1,2,3 being rock,paper,scissors while 4 corrolates to stoping the motors. and start moving at the begining of the rock-paper-scissors game.
+`robotSubscriber.py` will take in the message as to what move should be done, with 1,2,3 being rock,paper,scissors while 4 corrolates to stoping the motors. and start moving at the begining of the rock-paper-scissors game.
 
 **Getting Images** 
-in our 'cameraPublisher.py' file we 
+in our `cameraPublisher.py` file we 
 
 **running the code**
 read the steps above in objective 5 and use new file names
