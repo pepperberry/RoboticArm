@@ -35,8 +35,7 @@ Objectives:
 3. Learn how to code a simple robot arm program and download the Adafruit libraries.
 4. Create your first ROS2 package.
 5. Code in ROS2.
-6. use OpenCv in ROS2
-7. create a Rock, Paper, Scissors robot that can track who is winning and play along with you.
+6. using OpenCv with ROS2 For a Rock-Paper-Scissors robot
 
 ## Objective 1: Set Up the Raspberry Pi with Linux Ubuntu and ROS2 Jazzy
 
@@ -342,4 +341,23 @@ ros2 run package file.py
 ```
 replace the `package` with your package name and `file.py` with the name of your file you will need a terminal window open for each file you are running and to do these steps in each window.
 
-## Objective 6:  using OpenCv with ROS2
+## Objective 6:  using OpenCv with ROS2 For a Rock-Paper-Scissors robot
+
+**Description:** 
+
+now that we have gotten 2 nodes working in the basic publisher-subscriber format we can work on integrating other technolgy to make it a useful. we will be using OpenCV to capture images of a persons hand so we can play rock-paper-scissors and display the points for both the robot and person. 
+to best seperate this we will have 3 nodes:
+
+cameraPublisher.py - > robotPublisher.py(outputs to display) -> robotSubsriber.py(outputs to robot)
+
+'cameraPublisher.py' will get the images and publish the image
+
+'robotPublisher.py' will take in the image and do the bulk of playing the game, displaying the scores as well as the image and giveing you a countdown clock when the game is started. 
+
+'robotSubscriber.py' will take in the message as to what move should be done, with 1,2,3 being rock,paper,scissors while 4 corrolates to stoping the motors. and start moving at the begining of the rock-paper-scissors game.
+
+**Getting Images** 
+in our 'cameraPublisher.py' file we 
+
+**running the code**
+read the steps above in objective 5 and use new file names
