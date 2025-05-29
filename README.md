@@ -12,11 +12,12 @@ Hardware:
 - Mouse, keyboard, monitor, and their respective power cords
 - Robotic arm: Lynxmotion SES-V1 AL5D Arm
 - usb camera
+  
 Software:
--ROS2
--Python
--Ubuntu
--OpenCV
+- ROS2
+- Python
+- Ubuntu
+- OpenCV
 
 The arm uses:
 
