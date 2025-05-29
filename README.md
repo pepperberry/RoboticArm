@@ -4,13 +4,19 @@
 ### Info
 
 Materials:
-
+Hardware:
 - Raspberry Pi 5
 - PCA9685
 - Wires and an external power supply (ask Gary for the specific name)
 - heat sink provided to you
 - Mouse, keyboard, monitor, and their respective power cords
 - Robotic arm: Lynxmotion SES-V1 AL5D Arm
+- usb camera
+Software:
+-ROS2
+-Python
+-Ubuntu
+-OpenCV
 
 The arm uses:
 
