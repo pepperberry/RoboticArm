@@ -348,7 +348,7 @@ replace the `package` with your package name and `file.py` with the name of your
 now that we have gotten 2 nodes working in the basic publisher-subscriber format we can work on integrating other technolgy to make it a useful. we will be using OpenCV to capture images of a persons hand so we can play rock-paper-scissors and display the points for both the robot and person. 
 to best seperate this we will have 3 nodes:
 
-cameraPublisher.py - > robotPublisher.py(outputs to display) -> robotSubsriber.py(outputs to robot)
+`cameraPublisher.py` - > `robotPublisher.py`(outputs to display) -> `robotSubsriber.py`(outputs to robot)
 
 `cameraPublisher.py` will get the images and publish the image
 
