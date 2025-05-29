@@ -356,8 +356,10 @@ cameraPublisher.py - > robotPublisher.py(outputs to display) -> robotSubsriber.p
 
 `robotSubscriber.py` will take in the message as to what move should be done, with 1,2,3 being rock,paper,scissors while 4 corrolates to stoping the motors. and start moving at the begining of the rock-paper-scissors game.
 
-**Getting Images** 
+**Getting Images:** 
+
 in our `cameraPublisher.py` file we 
 
-**running the code**
+**running the code:**
+
 read the steps above in objective 5 and use new file names
